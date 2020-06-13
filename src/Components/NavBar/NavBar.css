@@ -1,0 +1,274 @@
+.navbar-container{
+    left: 0;
+    width: 250px;
+    height: 90%;
+    margin: 5% 0;
+    position: fixed;
+}
+.navbar-container__strip{
+    width:10px;
+    margin-left: 30px;
+    height: 100%;
+    position: absolute;
+    background-color: #FA9917;
+    align-self: center;
+    z-index: 0;
+}
+
+.navbar-container__circles{
+    margin-left: 10px;
+    height: 90%;
+    margin-top:5%;
+
+    position: absolute;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+
+.navbar-container__circles__circle{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(28, 118, 143, 0.7);
+    z-index: 1;
+}
+.navbar-container__circles__circle:after{
+     color: white;
+     content: "";
+     text-align: center;
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     visibility: hidden;
+     height: 10px;
+     left: 10px;
+     top: 50%;
+     width: 10px;
+     background-color: rgba(28, 118, 143, 0.7);
+     transition: width 1s ease-out 0s;
+     -webkit-transition: width 1s ease-out 0s;
+
+     z-index: 1;
+ }
+.navbar-container__circles__circle:nth-child(1):after{
+    content: "Обо мне";
+}
+.navbar-container__circles__circle:nth-child(2):after{
+    content: "Навыки";
+}
+.navbar-container__circles__circle:nth-child(3):after{
+    content: "Учеба";
+}
+.navbar-container__circles__circle:nth-child(4):after{
+    content: "Контакты";
+}
+
+.navbar-container__circles__circle:hover{
+}
+.navbar-container__circles__circle:hover:after{
+    left: 0;
+    top: 0;
+    height: 50px;
+    width: 250px;
+    border-radius: 250px;
+    position: absolute;
+    background-color: rgba(28, 118, 143, 0.7);
+    visibility: visible;
+}
+
+.resume-page{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: -1;
+    font-family: Montserrat;
+}
+.resume-page__header{
+    width: 100%;
+    height: 100px;
+    z-index: -1;
+}
+.resume-page__header_h4{
+    width: 100%;
+    z-index: -1;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.resume-page__container{
+    /*margin-left:250px;*/
+    height: 100%;
+}
+.resume-page__container__block{
+    margin: 50px 0;
+}
+
+
+
+.about-component{
+    display: flex;
+    height: 500px;
+}
+
+.about-component__image-container{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about-component__image-container_img{
+    margin: 0 auto;
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.about-component__text-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-component__text-container_span{
+    margin: 0 20px
+}
+
+
+
+
+
+.skills-component{
+    display: flex;
+    flex-direction: column;
+}
+.skills-component_h4{
+    font-size: 2rem;
+    margin: 0 auto;
+}
+.skills-component__list{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.skills-component__list__item{
+    display: flex;
+    width: 80%;
+    margin: 25px auto;
+}
+
+.skills-component__list__item__image-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skills-component__list__item__image-container_img{
+    object-fit: cover;
+    width:100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.skills-component__list__item__about-container{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.skills-component__list__item__about-container_span{
+    margin: 0 20px
+}
+
+
+
+
+.study-component{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.study-component_h4{
+    margin: 0 auto;
+    font-size: 2rem;
+}
+.study-component__list{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    min-width: 200px;
+    margin: 0 auto;
+}
+
+.study-component__list__item{
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0;
+}
+
+.study-component__list__item__date{
+    display: flex;
+    flex-direction: column;
+}
+
+.study-component__list__item__date_span{
+    margin: 0 auto;
+    white-space: nowrap;
+}
+
+.study-component__list__item__strip{
+    margin: auto 5px;
+    height: 2px;
+    min-width: 10px;
+    width: available;
+    width: -moz-available;
+    background-color: #5f9eb0;
+
+}
+
+.study-component__list__item__event{
+    display: flex;
+    flex-direction: column;
+}
+.study-component__list__item__event_span{
+    margin: 0 auto;
+    white-space: nowrap;
+}
+
+
+.contacts-component{
+    display: flex;
+    flex-direction: column;
+}
+.contacts-component_h4{
+    font-size: 2rem;
+    margin: 0 auto;
+}
+.contacts-component__contacts{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.contacts-component__contacts__contact{
+    display: flex;
+    flex-direction: column;
+}
+.contacts-component__contacts__contact_img{
+    max-width: 50px;
+    margin: 0 auto;
+}
+.contacts-component__contacts__contact_span{
+    font-size: 1.5rem;
+    margin: 0 auto;
+}
+
+
+
+
