@@ -1,0 +1,27 @@
+
+.resume-page{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: -1;
+  font-family: Montserrat;
+}
+.resume-page__header{
+  width: 100%;
+  height: 100px;
+  z-index: -1;
+}
+.resume-page__header_h4{
+  width: 100%;
+  z-index: -1;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.resume-page__container{
+  height: 100%;
+}
+.resume-page__container__block{
+  margin: 0 0 50px 0;
+}
+

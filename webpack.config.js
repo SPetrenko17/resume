@@ -64,8 +64,8 @@ module.exports = {
                     loader: 'file-loader',
                     options: {
                         name: '[name].[ext]',
-                        outputPath: 'img/',
-                        publicPath:'img/'
+                        outputPath: 'resources/',
+                        publicPath:'resources/'
                     }
                 }]
             },
@@ -97,10 +97,10 @@ module.exports = {
             hash: true,
             filename: 'index.html',
             template: './src/html/index.html',
-            favicon: './src/images/logo-light.png'
+            // favicon: './src/images/logo-light.png'
         }),
         new CopyWebpackPlugin([
-            {from:'src/images',to:'images'},
+            {from:'src/Images',to:'Images'},
             {from:'src/fonts',to:'fonts'},
             {from:'src/main/sw.worker.js',to:''},
         ]),
