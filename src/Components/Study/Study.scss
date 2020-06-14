@@ -3,68 +3,75 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
-.study-component_h4{
-  margin: 0 auto;
-  font-size: 2rem;
-}
-.study-component__list{
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  min-width: 200px;
-  margin: 0 auto;
+  &_h4{
+    margin: 0 auto;
+    font-size: 2rem;
+    cursor: default;
+  }
+  &__list{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    min-width: 200px;
+    margin: 0 auto;
+
+    &__item{
+      display: flex;
+      justify-content: space-between;
+      margin: 25px 0;
+      transition: transform 0.25s ease-in-out;
+      &:hover{
+        transform: scale(1.05);
+        .study-component__list__item__strip{
+          background-color: #f39c12;
+        }
+      }
+
+      &__date{
+        display: flex;
+        flex-direction: column;
+        &_span{
+          margin: 0 auto;
+          white-space: nowrap;
+          cursor: default;
+        }
+      }
+      &__strip{
+        margin: auto 5px;
+        height: 2px;
+        min-width: 10px;
+        width: available;
+        width: -moz-available;
+        background-color: #5f9eb0;
+      }
+      &__event{
+        display: flex;
+        flex-direction: column;
+        &_span{
+          margin: 0 auto;
+          white-space: nowrap;
+          cursor: default;
+        }
+      }
+    }
+  }
 }
 
-.study-component__list__item{
-  display: flex;
-  justify-content: space-between;
-  margin: 25px 0;
-}
-
-.study-component__list__item__date{
-  display: flex;
-  flex-direction: column;
-}
-
-.study-component__list__item__date_span{
-  margin: 0 auto;
-  white-space: nowrap;
-}
-
-.study-component__list__item__strip{
-  margin: auto 5px;
-  height: 2px;
-  min-width: 10px;
-  width: available;
-  width: -moz-available;
-  background-color: #5f9eb0;
-}
-.study-component__list__item__event{
-  display: flex;
-  flex-direction: column;
-}
-.study-component__list__item__event_span{
-  margin: 0 auto;
-  white-space: nowrap;
-}
 
 @media (max-width: 600px) {
   .study-component__list__item{
     flex-direction: column;
+    &__date{
+      text-align: center;
+      &_span{
+        white-space: normal;
+      }
+    }
+    &__event{
+      text-align: center;
+      &_span{
+        white-space: normal;
+      }
+    }
   }
-  .study-component__list__item__date{
-    text-align: center;
-
-  }
-  .study-component__list__item__date_span{
-    white-space: normal;
-  }
-  .study-component__list__item__event{
-    text-align: center;
-  }
-  .study-component__list__item__event_span{
-    white-space: normal;
-  }
-
 }

@@ -1,16 +1,16 @@
 import Router from '../utils/Router';
 import ResumeView from "../Views/ResumeView/ResumeView";
 
-/** Регистрация сервис воркера */
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.worker.js', {scope: '/'})
-        .then((reg) => {
-            console.log('Registration succeeded. Scope is ' + reg);
-
-        }).catch((error) => {
-            console.log('Registration failed with ' + error);
-        });
-}
+// /** Регистрация сервис воркера */
+// if ('serviceWorker' in navigator) {
+//     navigator.serviceWorker.register('./sw.worker.js', {scope: '/'})
+//         .then((reg) => {
+//             console.log('Registration succeeded. Scope is ' + reg);
+//
+//         }).catch((error) => {
+//             console.log('Registration failed with ' + error);
+//         });
+// }
 
 
 const html = document.getElementsByTagName('html').item(0);

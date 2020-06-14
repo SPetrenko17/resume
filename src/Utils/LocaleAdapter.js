@@ -1,13 +1,10 @@
-import ru from '../Locales/ru';
-import en from '../Locales/en';
+import ru from '../Locales/ru.json';
+import en from '../Locales/en.json';
 
 /**
  * @class
  */
-class LocaleAdapter {
-    language;
-    languageMap;
-
+class I18n {
     /**
      * LocaleAdapter constructor.
      * @constructor
@@ -38,4 +35,4 @@ class LocaleAdapter {
     }
 }
 
-export default new LocaleAdapter();
+export default new I18n();
