@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "homepage": "https://SPetrenko17.github.io/resume/",
+  "main": "./server.js",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "build": "webpack -p",
     "watch": "webpack --watch",
-    "start": "rm -rf dist && webpack -p && node ./server.js"
+    "start": "node ./server.js"
   },
   "keywords": [],
   "author": "",
@@ -49,6 +50,7 @@
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.4.2",
     "express": "^4.17.1",
+    "gh-pages": "^3.0.0",
     "handlebars-loader": "^1.7.1",
     "handlebars-template-loader": "^1.0.0",
     "node-sass": "^4.13.1",
