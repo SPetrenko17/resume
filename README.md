@@ -53,6 +53,10 @@
 * **Телеграм** - [@p_Sergei](https://t.me/p_Sergei)
 * **ВКонтакте** - [Сергей Петренко](https://vk.com/sergeiptrnk)
 
+---
+permalink: /index.html
+---
+
 
 
 
