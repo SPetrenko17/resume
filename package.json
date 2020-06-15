@@ -6,7 +6,7 @@
   "main": "./server.js",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist -b master",
     "build": "webpack -p",
     "watch": "webpack --watch",
     "start": "node ./server.js"
