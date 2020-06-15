@@ -2,7 +2,10 @@
   "name": "resume",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://SPetrenko17.github.io/resume/",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "webpack -p",
     "watch": "webpack --watch",
     "start": "rm -rf dist && webpack -p && node ./server.js"

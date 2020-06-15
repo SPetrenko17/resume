@@ -1,10 +1,19 @@
 <div class="study-component__list__item">
-    <div class="study-component__list__item__date">
-        <span class="study-component__list__item__date_span">{{date}}</span>
+    <div class="study-component__list__item__top">
+    <div class="study-component__list__item__top__date">
+        <span class="study-component__list__item__top__date_span">{{date}}</span>
     </div>
-    <div class="study-component__list__item__strip">
+    <div class="study-component__list__item__top__strip">
     </div>
-    <div class="study-component__list__item__event">
-        <span class="study-component__list__item__event_span">{{event}}</span>
+    <div class="study-component__list__item__top__event">
+        <span class="study-component__list__item__top__event_span">{{event}}</span>
+    </div>
+    </div>
+    <div class="study-component__list__item__bottom">
+        {{#each skills}}
+            <span class="study-component__list__item__bottom_span">{{this}}</span>
+        {{else}}
+<!--            <span class="study-component__list__item__bottom_span">Было очень много всего, здесь не уместится :(</span>-->
+        {{/each}}
     </div>
 </div>

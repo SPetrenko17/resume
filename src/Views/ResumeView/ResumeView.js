@@ -61,24 +61,51 @@ export default class ResumeView extends BaseView{
             },
             {component: StudyComponent, context: {
                     events:[
-                        {date:I18n.t('page.study.date.1'), event:I18n.t('page.study.events.1')},
-                        {date:I18n.t('page.study.date.2'), event:I18n.t('page.study.events.2')},
-                        {date:I18n.t('page.study.date.3'), event:I18n.t('page.study.events.3')},
-                        {date:I18n.t('page.study.date.4'), event:I18n.t('page.study.events.4')},
-                        {date:I18n.t('page.study.date.5'), event:I18n.t('page.study.events.5')},
+                        {
+                            date:I18n.t('page.study.date.1'),
+                            event:I18n.t('page.study.events.1'),
+                            skills:[
+                                I18n.t('page.study.skills.1')
+                            ]
+                        },
+                        {
+                            date:I18n.t('page.study.date.2'),
+                            event:I18n.t('page.study.events.2'),
+                            skills:[
+                                I18n.t('page.study.skills.2')
+                            ]
+                        },
+                        {
+                            date:I18n.t('page.study.date.3'),
+                            event:I18n.t('page.study.events.3'),
+                            skills:[
+                                I18n.t('page.study.skills.3')
+                            ]
+                        },
+                        {
+                            date:I18n.t('page.study.date.4'),
+                            event:I18n.t('page.study.events.4'),
+                            skills:[
+                                I18n.t('page.study.skills.4')
+                            ]},
+                        {
+                            date:I18n.t('page.study.date.5'),
+                            event:I18n.t('page.study.events.5'),
+                            skills:[
+                                I18n.t('page.study.skills.5')
+                            ]},
                     ]},
             },
             {component: ContactsComponent, context: {
                     contacts:[
-                        {imageSrc:'/Images/telegram-logo.svg', type:I18n.t('page.contacts.tg'),link:''},
-                        {imageSrc:'/Images/vk-logo.svg', type:I18n.t('page.contacts.vk'),link:''},
-                        {imageSrc:'/Images/mail-logo.svg', type:I18n.t('page.contacts.mail'),link:''},
-                        {imageSrc:'/Images/github-logo.svg', type:I18n.t('page.contacts.github'),link:''},
+                        {imageSrc:'/Images/telegram-logo.svg', type:I18n.t('page.contacts.tg'),link:'https://t.me/p_Sergei'},
+                        {imageSrc:'/Images/vk-logo.svg', type:I18n.t('page.contacts.vk'),link:'https://vk.com/sergeiptrnk'},
+                        {imageSrc:'/Images/mail-logo.svg', type:I18n.t('page.contacts.mail'),link:'mailto:SPetrenko17@yandex.ru'},
+                        {imageSrc:'/Images/github-logo.svg', type:I18n.t('page.contacts.github'),link:'https://github.com/SPetrenko17'},
                     ]},
             }
         ];
-        console.log('render', I18n.language);
-        this._app.innerHTML = ResumeTemplate();
+        this._app.innerHTML = ResumeTemplate({title:I18n.t('page.resume')});
         let blocks = this._app.getElementsByClassName(
             'resume-page__container__block');
         for(let i = 0; i < blocks.length; i++){
@@ -104,8 +131,6 @@ export default class ResumeView extends BaseView{
     _addListeners(){
         let switcher = this._app.getElementsByClassName('locale-switcher').item(0);
         switcher.addEventListener('click',()=>{
-            console.log('click');
-            console.log(I18n.language,I18n.language === 'ru')
             if(I18n.language === 'ru'){
                 I18n.setLanguage('en');
             }
@@ -113,19 +138,21 @@ export default class ResumeView extends BaseView{
                 I18n.setLanguage('ru');
             }
             this.render();
-        })
-
-        let el1 = document.getElementsByClassName('resume-page__header_h4').item(0);
-        let el2 = document.getElementsByClassName('skills-component_h4').item(0);
-        let el3 = document.getElementsByClassName('study-component_h4').item(0);
-        let el4 = document.getElementsByClassName(' contacts-component_h4').item(0);
-
-        window.addEventListener('scroll', function() {
-            console.log(pageYOffset);
         });
-        console.log(el1.getBoundingClientRect().top);
-        console.log(el2.getBoundingClientRect().top);
-        console.log(el3.getBoundingClientRect().top);
-        console.log(el4.getBoundingClientRect().top);
+        const points = [];
+        points.push(document.getElementsByClassName('resume-page__header_h4').item(0).getBoundingClientRect().top);
+        points.push(document.getElementsByClassName('skills-component_h4').item(0).getBoundingClientRect().top);
+        points.push(document.getElementsByClassName('study-component_h4').item(0).getBoundingClientRect().top);
+        points.push(document.getElementsByClassName(' contacts-component_h4').item(0).getBoundingClientRect().top);
+        let circles = document.getElementsByClassName('navbar-container__circles__circle');
+        for(let i = 0; i < circles.length; i++){
+            circles.item(i).addEventListener('click',()=>{
+                window.scrollTo({
+                    top: points[i],
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            })
+        }
     }
 }

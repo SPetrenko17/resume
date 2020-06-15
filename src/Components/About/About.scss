@@ -26,7 +26,8 @@
     flex-direction: column;
     justify-content: center;
     &_span{
-      margin: 0 20px
+      margin: 0 20px;
+      cursor: default;
     }
   }
 }

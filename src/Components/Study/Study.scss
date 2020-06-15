@@ -15,42 +15,68 @@
     min-width: 200px;
     margin: 0 auto;
 
-    &__item{
-      display: flex;
-      justify-content: space-between;
-      margin: 25px 0;
-      transition: transform 0.25s ease-in-out;
-      &:hover{
+    &__item {
+      &__top {
+        display: flex;
+        justify-content: space-between;
+        margin: 25px 0;
+        transition: transform 0.25s ease-in-out;
+        &__date {
+          display: flex;
+          flex-direction: column;
+
+          &_span {
+            margin: 0 auto;
+            white-space: nowrap;
+            cursor: default;
+          }
+        }
+
+        &__strip {
+          margin: auto 5px;
+          height: 2px;
+          min-width: 10px;
+          width: available;
+          width: -moz-available;
+          background-color: #5f9eb0;
+        }
+
+        &__event {
+          display: flex;
+          flex-direction: column;
+
+          &_span {
+            margin: 0 auto;
+            white-space: nowrap;
+            cursor: default;
+          }
+        }
+      }
+      &:hover {
+        transition: scale 0.5s 0.5s ease-in-out;
         transform: scale(1.05);
-        .study-component__list__item__strip{
+        .study-component__list__item__top__strip {
           background-color: #f39c12;
         }
-      }
-
-      &__date{
-        display: flex;
-        flex-direction: column;
-        &_span{
-          margin: 0 auto;
-          white-space: nowrap;
-          cursor: default;
+        .study-component__list__item__bottom{
+          opacity: 1;
+          height: auto;
+          max-height: 1000px;
+          //transition: height 0.25s ease-in-out;
+          transition: max-height 0.5s ease-in-out;
         }
       }
-      &__strip{
-        margin: auto 5px;
-        height: 2px;
-        min-width: 10px;
-        width: available;
-        width: -moz-available;
-        background-color: #5f9eb0;
-      }
-      &__event{
+        &__bottom{
+        height: 0;
+        //max-height: 0;
+        opacity: 0;
+          //transition: height 0.25s ease-in-out;
+        transition: max-height 0.5s ease-in-out;
         display: flex;
         flex-direction: column;
         &_span{
-          margin: 0 auto;
-          white-space: nowrap;
-          cursor: default;
+          font-size: 1rem;
+          margin-bottom: 5px;
         }
       }
     }

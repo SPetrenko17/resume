@@ -3,6 +3,7 @@
 import './Study.scss';
 import StudyTemplate from './Study.hbs';
 import StudyItemTemplate from '../StudyItem/StudyItem.hbs'
+import I18n from "../../Utils/LocaleAdapter";
 
 
 export default class StudyComponent {
@@ -12,9 +13,9 @@ export default class StudyComponent {
 
     _renderTemplate(context){
         let events = context.events.map((event) => {
-            return StudyItemTemplate({date: event.date , event: event.event });
+            return StudyItemTemplate({date: event.date , event: event.event, skills: event.skills });
         });
-        this._parent.innerHTML = StudyTemplate({studyItems: events});
+        this._parent.innerHTML = StudyTemplate({title:I18n.t('page.education'), studyItems: events});
     }
 
     render(context) {
